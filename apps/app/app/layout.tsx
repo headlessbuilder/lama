@@ -9,8 +9,8 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { WebVitals } from "@/components/web-vitals";
 import { ReactQueryProvider } from "@/lib/ReactQueryProvider";
-import { fontSans } from "@/lib/fonts";
 import { cn } from "@/lib/utils";
+import { InterFont } from "@/src/assets/fonts/inter";
 import "@/styles/globals.css";
 import "@/styles/mdx.css";
 import "@/styles/querybuilder.css";
@@ -33,7 +33,7 @@ export default async function RootLayout({
       <body
         className={cn(
           "relative flex min-h-screen w-full flex-col justify-center scroll-smooth bg-background font-sans antialiased",
-          fontSans.variable
+          InterFont.variable
         )}
       >
         <PHProvider>

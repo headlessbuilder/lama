@@ -6,8 +6,9 @@ import Email from "../templates/LoginLink";
 const sendWebVerificationRequest =
   (subject: string, from: string) =>
   async (params: SendVerificationRequestParams) => {
+    if (resend !== undefined) {
     try {
-      await resend?.sendEmail({
+      await resend?.emails.send({
         from,
         to: params.identifier,
         subject,
@@ -17,7 +18,7 @@ const sendWebVerificationRequest =
       });
     } catch (error) {
       console.log({ error });
-    }
+    }}
   };
 
 export const sendVerificationRequest = sendWebVerificationRequest(
