@@ -1,6 +1,7 @@
-import { NextConfig } from "next";
+import "./env.mjs";
 
-const nextConfig: NextConfig = {
+/** @type {import("next").NextConfig} */
+const nextConfig = {
   reactStrictMode: true,
   ...(process.env.NODE_ENV === "production" && {
     compiler: {

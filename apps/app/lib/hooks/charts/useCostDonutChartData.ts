@@ -15,7 +15,7 @@ export const useCostDonutChartData = (
     return { billing: billingData.data, chartData: [], isLoading };
   }
 
-  const cumulativeTotalCost = billingData.data.daily_costs.reduce(
+  const cumulativeTotalCost = billingData?.data?.daily_costs.reduce(
     (acc, { line_items }) =>
       line_items.reduce((innerAcc, { name, cost }) => {
         if (!categories.includes(name as Category)) {
@@ -33,7 +33,7 @@ export const useCostDonutChartData = (
     {}
   );
 
-  const data = Object.entries(cumulativeTotalCost)
+  const data = Object.entries(cumulativeTotalCost!)
     .map(([name, cost]) => ({
       name,
       cost: (cost as number) / 100,

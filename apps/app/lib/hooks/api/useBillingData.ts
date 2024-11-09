@@ -1,4 +1,5 @@
 import usageRange from "@/fixtures/openai/usage-range.json";
+import { BillingUsageResponse } from "@/lib/types"; // Ensure you have this type defined
 import openai, { OpenAI } from "@/lib/services/openai";
 import { useQuery } from "@tanstack/react-query";
 import { add, format } from "date-fns";
@@ -31,7 +32,6 @@ export const useBillingData = (startDate: Date, endDate: Date) => {
         ? 1000 * 60 * 5
         : Infinity,
 
-    enabled: OpenAI.hasKey() && status === "authenticated",
-    placeholderData: status === "unauthenticated" ? usageRange : undefined,
+    placeholderData: status === "unauthenticated" ? (usageRange as BillingUsageResponse) : undefined,
   });
 };

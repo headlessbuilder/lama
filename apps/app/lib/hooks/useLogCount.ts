@@ -25,7 +25,6 @@ export const useLogCount = ({
     refetchOnReconnect: true,
     refetchInterval: 1000 * 60 * 60,
     staleTime: 0,
-    cacheTime: 0,
     retry: 3,
   });
 };
