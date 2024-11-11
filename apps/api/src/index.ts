@@ -1,5 +1,5 @@
 import { logger } from "hono/logger";
-import v1 from "~/routes";
+import v1 from "./routes";
 import { compress } from "hono/compress";
 import { swaggerUI } from "@hono/swagger-ui";
 import { OpenAPIHono } from "@hono/zod-openapi";
