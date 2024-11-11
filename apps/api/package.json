@@ -1,0 +1,17 @@
+{
+  "name": "@llm.report/api",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "dependencies": {
+    "@hono/node-server": "^1.13.6",
+    "@hono/swagger-ui": "^0.4.1",
+    "@hono/zod-openapi": "^0.17.0",
+    "hono": "^4.6.9"
+  },
+  "devDependencies": {
+    "@llm.report/tsconfig": "workspace:*",
+    "@types/node": "^20.17.6",
+    "tsx": "^4.19.2"
+  }
+}

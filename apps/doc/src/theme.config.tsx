@@ -20,8 +20,9 @@ const config: DocsThemeConfig = {
     labels: "feedback",
   },
   sidebar: {
-    defaultMenuCollapseLevel: 1,
     toggleButton: true,
+    autoCollapse: false,
+    defaultMenuCollapseLevel: 1,
   },
   footer: {
     content: (

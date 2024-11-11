@@ -1,0 +1,11 @@
+{
+  "extends": "@llm.report/tsconfig/base.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "~/*": [
+        "./src/*"
+      ]
+    },
+  },
+}
