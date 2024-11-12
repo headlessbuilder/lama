@@ -1,13 +1,13 @@
-import { preWrapperPlugin } from "@/lib/markdown/preWrapperPlugin";
-import MarkdownIt from "markdown-it";
+import { preWrapperPlugin } from '@/lib/markdown/preWrapperPlugin';
+import MarkdownIt from 'markdown-it';
 import {
-  createDiffProcessor,
-  createFocusProcessor,
-  createHighlightProcessor,
-  createRangeProcessor,
-  defineProcessor,
-  getHighlighter,
-} from "shiki-processor";
+	createDiffProcessor,
+	createFocusProcessor,
+	createHighlightProcessor,
+	createRangeProcessor,
+	defineProcessor,
+	getHighlighter,
+} from 'shiki-processor';
 
 const CurlLogs = `
 \`\`\`bash
@@ -178,88 +178,88 @@ print(completion.choices[0].message)
 `;
 
 const highlighterConfig = {
-  theme: "material-theme-palenight",
-  processors: [
-    createDiffProcessor(),
-    createHighlightProcessor(),
-    createFocusProcessor(),
-    defineProcessor({
-      name: "line",
-      handler: createRangeProcessor({
-        error: ["highlighted", "error"],
-        warning: ["highlighted", "warning"],
-      }),
-      postProcess: ({ code }) => {
-        const modifiedCode = code.replace(
-          /(.withlogging)/g,
-          '<span class="highlight-word">$1</span>'
-        );
-        // console.log("code", modifiedCode);
-        return modifiedCode;
-      },
-    }),
-  ],
+	theme: 'material-theme-palenight',
+	processors: [
+		createDiffProcessor(),
+		createHighlightProcessor(),
+		createFocusProcessor(),
+		defineProcessor({
+			name: 'line',
+			handler: createRangeProcessor({
+				error: ['highlighted', 'error'],
+				warning: ['highlighted', 'warning'],
+			}),
+			postProcess: ({ code }) => {
+				const modifiedCode = code.replace(
+					/(.withlogging)/g,
+					'<span class="highlight-word">$1</span>',
+				);
+				// console.log("code", modifiedCode);
+				return modifiedCode;
+			},
+		}),
+	],
 };
 
 const markdownConfig = {
-  html: true,
-  linkify: true,
-  typographer: true,
+	html: true,
+	linkify: true,
+	typographer: true,
 };
 
 interface CodeResults {
-  curl: string;
-  js: string;
-  nodejs: string;
-  python: string;
+	curl: string;
+	js: string;
+	nodejs: string;
+	python: string;
 }
 
 interface Highlighter {
-  codeToHtml: (
-    code: string,
-    options: { lang: string; theme?: string }
-  ) => string;
+	codeToHtml: (
+		code: string,
+		options: { lang: string; theme?: string },
+	) => string;
 }
 
 let highlighterInstance: Highlighter | null = null;
 let markdownItInstance: MarkdownIt | null = null;
 
 async function getHighlighterInstance(): Promise<Highlighter> {
-  if (!highlighterInstance) {
-    highlighterInstance = await getHighlighter(highlighterConfig);
-  }
-  return highlighterInstance;
+	if (!highlighterInstance) {
+		highlighterInstance = await getHighlighter(highlighterConfig);
+	}
+	return highlighterInstance;
 }
 
 async function getMarkdownItInstance(): Promise<MarkdownIt> {
-  if (!markdownItInstance) {
-    const highlighter = await getHighlighterInstance();
+	if (!markdownItInstance) {
+		const highlighter = await getHighlighterInstance();
 
-    markdownItInstance = new MarkdownIt({
-      ...markdownConfig,
-      highlight: (code, lang) => highlighter.codeToHtml(code, { lang }),
-    }).use(preWrapperPlugin);
-  }
+		markdownItInstance = new MarkdownIt({
+			...markdownConfig,
+			highlight: (code, lang) => highlighter.codeToHtml(code, { lang }),
+		}).use(preWrapperPlugin);
+	}
 
-  return markdownItInstance;
+	return markdownItInstance;
 }
 
 export async function getUsersCode(): Promise<CodeResults> {
-  const renderer = await getMarkdownItInstance();
-  return {
-    curl: renderer.render(CurlUser),
-    js: renderer.render(JSUser),
-    nodejs: renderer.render(NodejsUser),
-    python: renderer.render(PythonUser),
-  };
+	const renderer = await getMarkdownItInstance();
+	return {
+		curl: renderer.render(CurlUser),
+		js: renderer.render(JSUser),
+		nodejs: renderer.render(NodejsUser),
+		python: renderer.render(PythonUser),
+	};
 }
 
 export async function getLogsCode(): Promise<CodeResults> {
-  const renderer = await getMarkdownItInstance();
-  return {
-    curl: renderer.render(CurlLogs),
-    js: renderer.render(JSLogs),
-    nodejs: renderer.render(NodejsLogs),
-    python: renderer.render(PythonLogs),
-  };
+	const renderer = await getMarkdownItInstance();
+	return {
+		curl: renderer.render(CurlLogs),
+		js: renderer.render(JSLogs),
+		nodejs: renderer.render(NodejsLogs),
+		python: renderer.render(PythonLogs),
+	};
 }

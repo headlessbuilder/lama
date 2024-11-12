@@ -1,0 +1,16 @@
+{
+  "editor.tabSize": 2,
+  "editor.formatOnSave": true,
+  "files.autoSave": "afterDelay",
+  "editor.cursorStyle": "underline",
+  "editor.codeActionsOnSave": {
+    "source.removeUnused.ts": "always",
+    "source.organizeImports.biome": "explicit"
+  },
+  "typescript.referencesCodeLens.enabled": true,
+  "typescript.implementationsCodeLens.enabled": true,
+  "typescript.tsdk": "./node_modules/typescript/lib",
+  "files.associations": {
+    "*.css": "tailwindcss"
+  }
+}

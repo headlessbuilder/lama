@@ -1,5 +1,5 @@
 {
-  "extends": "@llm.report/tsconfig/base.json",
-  "include": ["."],
-  "exclude": ["dist", "build", "node_modules"]
+	"extends": "@llm.report/tsconfig/base.json",
+	"include": ["."],
+	"exclude": ["dist", "build", "node_modules"]
 }

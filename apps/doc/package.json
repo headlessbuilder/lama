@@ -1,26 +1,26 @@
 {
-  "name": "@llm.report/doc",
-  "scripts": {
-    "dev": "next ",
-    "build": "next build",
-    "start": "next start"
-  },
-  "dependencies": {
-    "next": "^15.0.3",
-    "nextra": "^3.2.3",
-    "nextra-theme-docs": "^3.2.3",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1"
-  },
-  "devDependencies": {
-    "@llm.report/tailwindcss": "workspace:*",
-    "@llm.report/tsconfig": "workspace:*",
-    "@types/react": "18.3.12",
-    "add": "^2.0.6",
-    "autoprefixer": "^10.4.20",
-    "cssnano": "^7.0.6",
-    "postcss": "^8.4.47",
-    "tailwindcss": "^3.4.14"
-  },
-  "packageManager": "pnpm@9.12.3"
+	"name": "@llm.report/doc",
+	"scripts": {
+		"dev": "next ",
+		"build": "next build",
+		"start": "next start"
+	},
+	"dependencies": {
+		"next": "^15.0.3",
+		"nextra": "^3.2.3",
+		"nextra-theme-docs": "^3.2.3",
+		"react": "^18.3.1",
+		"react-dom": "^18.3.1"
+	},
+	"devDependencies": {
+		"@llm.report/tailwindcss": "workspace:*",
+		"@llm.report/tsconfig": "workspace:*",
+		"@types/react": "18.3.12",
+		"add": "^2.0.6",
+		"autoprefixer": "^10.4.20",
+		"cssnano": "^7.0.6",
+		"postcss": "^8.4.47",
+		"tailwindcss": "^3.4.14"
+	},
+	"packageManager": "pnpm@9.12.3"
 }
