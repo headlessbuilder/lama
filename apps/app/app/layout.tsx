@@ -18,49 +18,44 @@ import { Metadata } from 'next';
 import 'react-querybuilder/dist/query-builder.css';
 
 export const metadata: Metadata = {
-	title: 'LLM Report',
-	description: 'Logging and Analytics for AI Apps',
+  title: 'LLM Report',
+  description: 'Logging and Analytics for AI Apps',
 };
 
 export default async function RootLayout({
-	children,
+  children,
 }: {
-	children: React.ReactNode;
+  children: React.ReactNode;
 }) {
-	return (
-		<html lang="en" suppressHydrationWarning>
-			<head />
-			<body
-				className={cn(
-					'relative flex min-h-screen w-full flex-col justify-center scroll-smooth bg-background font-sans antialiased',
-					InterFont.variable,
-				)}
-			>
-				<PHProvider>
-					<MotionProvider>
-						<SessionProvider>
-							<ReactQueryProvider>
-								<TooltipProvider>
-									<ThemeProvider
-										attribute="class"
-										defaultTheme="light"
-										enableSystem
-									>
-										{children}
-										<Analytics />
-										{/* <CrispChat /> */}
-										<WebVitals />
-										<PosthogIdentify />
-										{/* <TailwindIndicator /> */}
-										<Toaster />
-										<HotToaster />
-									</ThemeProvider>
-								</TooltipProvider>
-							</ReactQueryProvider>
-						</SessionProvider>
-					</MotionProvider>
-				</PHProvider>
-			</body>
-		</html>
-	);
+  return (
+    <html lang="en" suppressHydrationWarning>
+      <head />
+      <body
+        className={cn(
+          'relative flex min-h-screen w-full flex-col justify-center scroll-smooth bg-background font-sans antialiased',
+          InterFont.variable,
+        )}>
+        <PHProvider>
+          <MotionProvider>
+            <SessionProvider>
+              <ReactQueryProvider>
+                <TooltipProvider>
+                  <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
+                    {children}
+                    <Analytics />
+                    {/* <CrispChat /> */}
+                    <WebVitals />
+                    <PosthogIdentify />
+                    {/* <TailwindIndicator /> */}
+                    <Toaster />
+                    <HotToaster />
+                  </ThemeProvider>
+                </TooltipProvider>
+              </ReactQueryProvider>
+            </SessionProvider>
+          </MotionProvider>
+        </PHProvider>
+      </body>
+    </html>
+  );
 }

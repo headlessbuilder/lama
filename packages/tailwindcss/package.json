@@ -1,19 +1,19 @@
 {
-	"$schema": "https://json.schemastore.org/package",
-	"name": "@llm.report/tailwindcss",
-	"version": "0.0.0",
-	"private": true,
-	"license": "MIT",
-	"publishConfig": {
-		"access": "public"
-	},
-	"exports": {
-		".": "./tailwind.config.ts"
-	},
-	"devDependencies": {
-		"@llm.report/tsconfig": "workspace:*",
-		"@tailwindcss/forms": "^0.5.9",
-		"@tailwindcss/typography": "^0.5.15",
-		"tailwindcss": "^3.4.14"
-	}
+  "$schema": "https://json.schemastore.org/package",
+  "name": "@llm.report/tailwindcss",
+  "version": "0.0.0",
+  "private": true,
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "exports": {
+    ".": "./tailwind.config.ts"
+  },
+  "devDependencies": {
+    "@llm.report/tsconfig": "workspace:*",
+    "@tailwindcss/forms": "^0.5.9",
+    "@tailwindcss/typography": "^0.5.15",
+    "tailwindcss": "^3.4.14"
+  }
 }

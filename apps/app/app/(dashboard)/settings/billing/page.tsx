@@ -1,7 +1,7 @@
 import Pricing from '@/components/pricing-plans';
 
 const Billing = () => {
-	return <Pricing />;
+  return <Pricing />;
 };
 
 export default Billing;

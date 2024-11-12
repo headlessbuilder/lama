@@ -1,15 +1,15 @@
 {
-	"name": "@llm.report/email",
-	"version": "0.0.0",
-	"private": true,
-	"scripts": {
-		"dev": "email dev -p 3001",
-		"export": "email export"
-	},
-	"dependencies": {
-		"@llm.report/tsconfig": "workspace:*",
-		"@react-email/components": "^0.0.28",
-		"browserslist": "^4.24.2",
-		"react-email": "3.0.2"
-	}
+  "name": "@llm.report/email",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "email dev -p 3001",
+    "export": "email export"
+  },
+  "dependencies": {
+    "@llm.report/tsconfig": "workspace:*",
+    "@react-email/components": "^0.0.28",
+    "browserslist": "^4.24.2",
+    "react-email": "3.0.2"
+  }
 }

@@ -8,16 +8,16 @@ import { getCurrentUser } from '@/lib/session';
 import { redirect } from 'next/navigation';
 
 export default async function Home() {
-	const user = await getCurrentUser();
-	if (user) redirect('/openai');
-	return (
-		<>
-			<Hero />
-			<TrustedBy />
-			<TestimonialHighlight />
-			<FeatureSections />
-			<Testimonials />
-			<CommunitySection />
-		</>
-	);
+  const user = await getCurrentUser();
+  if (user) redirect('/openai');
+  return (
+    <>
+      <Hero />
+      <TrustedBy />
+      <TestimonialHighlight />
+      <FeatureSections />
+      <Testimonials />
+      <CommunitySection />
+    </>
+  );
 }

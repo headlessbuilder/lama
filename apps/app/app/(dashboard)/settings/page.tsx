@@ -1,7 +1,7 @@
 import { redirect } from 'next/navigation';
 
 const Settings = () => {
-	redirect('/settings/billing');
+  redirect('/settings/billing');
 };
 
 export default Settings;
